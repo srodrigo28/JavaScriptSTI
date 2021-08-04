@@ -8,6 +8,17 @@ const Modal = {
         document.querySelector('.modal-overlay').classList.remove('active');
     }
 }
+
+const Storage = {
+    get(){
+        return JSON.parse(localStorage.getItem
+        ("dev.finances:transactions")) || []
+    },
+    set(transactions){
+        localStorage.setItem("dev.finances:transactions",
+        JSON.stringify(transactions))
+    }
+}
 /** Lembranças 
  1. [ ]  incomes somar as entradas
 // 2. [ ]  expenses somar as saídas
@@ -15,13 +26,14 @@ const Modal = {
 // 4. [ ]  expenses somar as saídas */
 
 const Transaction = {
-    all: [
-        { description: 'Casa gás', amount: -9454, date: '23/01/2021' },
-        { description: 'Salário', amount: 79000, date: '23/01/2021' },
-        { description: 'Energia', amount: -24000, date: '23/01/2021' },
-        { description: 'Energia 2', amount: -24000, date: '23/01/2021' },
-        { description: 'Serviço 2', amount: 24000, date: '23/01/2021' },
-    ],
+    all: Storage.get(),
+    //     [
+    //    { description: 'Casa gás', amount: -9454, date: '23/01/2021' },
+    //     { description: 'Salário', amount: 79000, date: '23/01/2021' },
+    //     { description: 'Energia', amount: -24000, date: '23/01/2021' },
+    //     { description: 'Energia 2', amount: -24000, date: '23/01/2021' },
+    //     { description: 'Serviço 2', amount: 24000, date: '23/01/2021' },
+    // ],
     add(transaction) {
         Transaction.all.push(transaction)
         App.reload()
@@ -174,12 +186,17 @@ const Form = {
     }
 }
 
+// Storage.get()
+// Storage.set()
+
 const App = {
     init() {
-        Transaction.all.forEach((transaction, index) => {
-            DOM.addTransaction(transaction, index)
-        })
+        // Transaction.all.forEach((transaction, index) => {
+        //     DOM.addTransaction(transaction, index)
+        //})
+        Transaction.all.forEach(DOM.addTransaction)
         DOM.updateBalance()
+        Storage.set(Transaction.all)
     },
 
     reload() {
