@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simples Jascript</title>
+    <style>
+        *{
+            margin: 0; padding: 0;
+        }
+        .container{ text-align: center; background: violet; height: 760px;}
+        .conteudo{ margin-top: 100px; border: 1px solid black; }
+        button
+        {
+            font-size: 20px;
+            background: black;
+            color: white;
+            padding: 10px;
+            width: 150px;
+            border: 5px solid white;
+            border-radius: 10px 0 10px;
+        }
+
+    </style>
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="conteudo">
+            <h1 id="para">Some text here</h1>
+            <button onclick="changeColor('blue');">blue</button>
+            <button onclick="changeColor('red');">red</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    function changeColor(newColor) {
+        var elem = document.getElementById('para');
+        elem.style.color = newColor;
+    }
+</script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+ 
+<html lang="pt-br">
+	<head>	
+		<meta charset="utf-8"/>
+		<title>Exemplo de preventDefault jquery-js</title>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				
+				$("input").click(function(e) {
+					
+					e.preventDefault();
+					
+				});
+				
+				$("a").click(function(e) {
+					
+					e.preventDefault();
+					
+				});
+				
+			});
+		</script>
+		
+		<style>
+			body {
+				text-align: center;
+				padding: 100px;
+			}
+			
+			input, a {
+				margin-right: 50px;
+			}
+		</style>
+	</head>
+	
+	<body>	
+		<h1>Tente marcar algum desses checkbox</h1> <br/>
+		
+		
+		João <input type="checkbox"/>
+		Maria <input type="checkbox"/>
+		Pedro <input type="checkbox"/>
+		Antonia <input type="checkbox"/> <br/><br/><br/><br/><br/>
+		
+		<h1>Abaixo existe um link para a página do google, outro link para o uol e outro link para o g1</h1> 
+		
+		<h2>Mas nenhum deles vai abrir a página, porque estão todos com o preventDefault</h2> <br/>
+		
+		<a href="https://www.google.com.br"/>GOOGLE</a>
+		<a href="https://www.uol.com.br"/>UOL</a>
+		<a href="https://www.g1.com"/>G1</a>
+	</body>
+</html>
+ 

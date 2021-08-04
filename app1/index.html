@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Seb App</title>
+	<style>
+	
+	*{	box-sizing: border-box; margin: 0; padding: 0; }	
+	html, body { height: 100vh;	}
+	body { 
+		background-color: #7159c1;
+		font-family: Roboto,
+		Arial, sans-serif;
+	}
+	section { 
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	h2{
+		font-size: 32px;
+		letter-spacing: 1px; 
+		margin: 20px 0;
+		color: #7159c1;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	form {
+		margin: 20px 0;
+		margin-top: 60%;
+		background-color: white;
+		padding: 30px 25px;
+		border-radius: 5px;
+	}
+
+	form .input-block label { font-size: 14px; color: darkslateblue; font-weight: 700 }
+	form .input-block { margin-bottom: 20px; }
+	form .input-block input {
+		  width: 100%;
+		  display: block;
+		  margin-top: 8px;
+		  padding: 7px;
+		  font-size: 16px;
+		  color: #7159c1;
+		  border-radius: 2px;
+		  border: 1px solid #ccddef;
+		  outline-color: #7159c1;
+		}
+	form .btn-login {
+		  display: block;
+		  min-width: 120px;
+		  border: none;
+		  background-color: #7159c1;
+		  color: white;
+		  border-radius: 25px;
+		  margin: auto;
+		  padding: 7px;
+	}
+	/* APARIÇÃO DO FORM ANIMAÇÃO  */
+	form {
+		animation-name: fade;
+		animation-duration: 5000ms;
+	}
+	@keyframes fade {
+		from { opacity: 0; transform: scale(0.9); }
+		to { opacity: 1; transform: scale(1); }
+	}
+	</style>
+  </head>
+  <body>
+    <section class="form-section">
+      <div class="form-wrapper">
+        <form>
+		  <h2>Seb App</h2>
+          <div class="input-block">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" />
+          </div>
+          <div class="input-block">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" />
+          </div>
+          <button onclick="entrar()" class="btn-login">Login</button>
+        </form>
+      </div>
+    </section>
+    <script>
+        $("input").click(function(e) {	
+            // isso vai cancelar qualquer ação padrão do elemento escolhido	
+            e.preventDefault();
+                              
+        });
+        function entrar(e){
+            e.preventDefault()
+            alert('Usuário ou senha Inválidos')
+            console.log('oi')
+        }
+    </script>
+  </body>
+</html>
