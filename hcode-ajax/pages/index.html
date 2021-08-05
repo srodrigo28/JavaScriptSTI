@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hcode - Ajax</title>
+    <!-- https://www.udemy.com/course/jquery-curso-completo/learn/lecture/17740326#questions -->
+</head>
+<body>
+    <form id="form_create_book">
+        <input type="text" name="name" />
+        <input type="text" name="author" />
+
+        <button type="submit">Cadastrar</button>
+    </form>
+    <table id="books_list">
+        <thead>
+            <th>Nome</th>
+            <th>Author</th>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script src="../assets/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        function loadData(){
+
+            $('table tbody').html('');
+            $.get('http://localhost:3000/books', function(response){
+                $.each(response, function(index, item){
+                let tr = `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>${item.author}</td>    
+                    </tr>
+                `;
+                $('table tbody').append(tr);
+
+                });
+
+            });
+        }
+        loadData();
+        $('#form_create_book').on('submit', function(event){
+            event.preventDefault();
+            let data = {};
+            
+            $.each($(this).serializeArray(), function(index, item){
+                data[item.name] = item.value;
+            });
+            $.post('http://localhost:3000/books', data, function(response){
+                loadData();
+            })
+        });
+    });
+    </script>
+</body>
+</html>
