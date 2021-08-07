@@ -22,6 +22,9 @@
 # aula 04
     * link:: https://www.youtube.com/watch?v=xaxybbj7Q5w&list=PL1hl9qLyFtfDXY9NO8F3TnjxezKJ_1HlI&index=4
     * criando methodo get
+# aula 05
+    * link:: https://www.youtube.com/watch?v=WAww1rq1QdE&list=PL1hl9qLyFtfDXY9NO8F3TnjxezKJ_1HlI&index=5
+    * criando o methodo get/codigo
 # NodeJS
     * Ryan Dahl (born 1981) is an American software engineer
     * Link:: https://www.youtube.com/watch?v=boQfcrc6b6A&list=PL1hl9qLyFtfDXY9NO8F3TnjxezKJ_1HlI&index=2
