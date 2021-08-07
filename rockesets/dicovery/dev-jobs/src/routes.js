@@ -6,8 +6,9 @@ const views = __dirname + "/views/"
 const profile = {
     name: "Bastião",
     avatar: "https://xesque.rocketseat.dev/users/avatar/profile-69cce0a9-6489-4bf1-a027-2e47ec5a706c-1628087054494.jpg",
-    "hours-per-day": 150,
+    "monthly-budget": 3000,
     "days-per-week": 4,
+    "hours-per-day": 150,
     "vacation-per-year": 20,
     "money": 5000
 }

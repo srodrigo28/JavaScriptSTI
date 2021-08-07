@@ -15,9 +15,8 @@
 
         <button type="submit">Cadastrar</button>
     </form>
-    <table id="books_list" border="1">
+    <table id="books_list">
         <thead>
-            <th>Código</th>
             <th>Nome</th>
             <th>Author</th>
         </thead>
@@ -35,7 +34,6 @@
                 $.each(response, function(index, item){
                 let tr = `
                     <tr>
-                        <td>${item._id}</td>
                         <td>${item.name}</td>
                         <td>${item.author}</td>    
                     </tr>
